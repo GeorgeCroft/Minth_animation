@@ -1,0 +1,416 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+@font-face {
+	font-family: Apex_New_Light;
+    src: url(assets/Apex_New_Light.otf);
+}
+
+@media screen {
+	div#preloader {
+		position: absolute;
+		left: -9999px;
+		top:  -9999px;
+	}
+	div#preloader img {
+		display: block;
+	}
+}
+@media print {
+	div#preloader, div#preloader img {
+		visibility: hidden;
+		display: none;
+	}
+}
+
+.flip-container {
+	-webkit-perspective: 1000;
+	-moz-perspective: 1000;
+	-o-perspective: 1000;
+	perspective: 1000;
+}
+
+.front, .back {
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	position: absolute;
+}
+
+.rotate {
+	animation: rotate forwards;
+	animation-duration: 0.6s;
+	animation-iteration-count: 1;
+}
+
+.back {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+
+.flipper {
+	width: 100%;
+	height: 100%;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.main_wrapper {
+	position: relative;
+	height: 3500px;
+	width: 100vw;
+}
+
+.main {
+	width: 100vw;
+	height: 3500px;
+	overflow: hidden;
+}
+
+.center {
+	position: relative;
+	width: 62.5%;
+	height: 43.2295vw;
+	left: 17.75%;
+	margin-top: 1.2vw;
+}
+
+.center_image {
+	position: absolute;
+	width: 100%;
+	height: 43.2295vw;
+	background: url("assets/M_logo.png") 49.7% 75% no-repeat;
+	background-size: 84%;
+	opacity: 0;
+	animation: fade_in 2.6s forwards;
+	-webkit-animation-delay: 5.6s;
+	animation-delay: 5.6s;
+}
+
+.center_background {
+	position: absolute;
+	width: 61.4vw;
+	height: 38.334vw;
+	transform: translateX(-50%) translateY(-50%);
+	left: 50%;
+	top: 24.65vw;
+	background: url("assets/patrat_1400.jpg") no-repeat;
+	background-size: 100% 100%;
+	animation: zoom_out 3.5s forwards, fade_out 4s forwards;
+	-webkit-animation-delay: 5.4s;
+	animation-delay: 5.4s;
+}
+
+.center_backgroundX {
+	position: absolute;
+	width: 79.167vw;
+	height: 49.479vw;
+	transform: translateX(-50%);
+	left: 50%;
+	background: url("assets/fundal_950.jpg") no-repeat;
+	background-size: 100% 100%;
+	animation: fade_out 2.8s forwards;
+	-webkit-animation-delay: 6s;
+	animation-delay: 6s;
+}
+
+@media (max-device-width: 1520px) {
+	.center_backgroundX {
+		width: 100vw;
+		height: 49.479vw;
+	}
+
+	.center_background {
+		width: 77.5vw;
+		height: 38.334vw;
+		left: 50vw;
+	}
+}
+
+.minty_place {
+	position: absolute;
+	height: 18.0723%;
+	width: 7.0834%;
+	top: 47%;
+	left: -20%;
+	background: url("assets/minty_1.png") center no-repeat;
+	background-size: contain;
+	z-index: 1;
+}
+
+.minty {
+	animation: minty_move 4.2s forwards;
+	-webkit-animation-delay: 1.4s;
+	animation-delay: 1.4s;
+}
+
+.motto {
+	position: absolute;
+    margin-left: 103%;
+    top: 43%;
+    width: inherit;
+    color: #002542;
+    font-size: 16px;
+    font-family: Apex_New_Light;
+    opacity: 0;
+    animation: fade_in 1s forwards;
+	-webkit-animation-delay: 5.6s;
+    animation-delay: 5.6s;
+}
+
+.shadow {
+	-webkit-box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.2);
+	box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.2);
+}
+
+/*Puzzle*/
+
+.bck_img {
+	width: 100%;
+	height: 100%;
+	background-size: 100%;
+}
+
+	/*Puzzle piece 1*/
+	.puzzle1 {
+		position: absolute;
+		width: 19.834%;
+		height: 28.675%;
+		margin-top: 8.735%;
+		margin-left: 7.333%;
+	}
+
+	.puzzle1 .front {
+		background-image: url("assets/frame_1.png");
+	}
+
+	.puzzle1 .back {
+		background-image: url("assets/frame_1_back.png");
+	}
+
+	/*Puzzle piece 2*/
+
+	.puzzle2 {
+		position: absolute;
+		width: 19.834%;
+		height: 28.675%;
+		margin-top: 8.735%;
+		margin-left: calc(7.333% + 19.834% + 2%);
+	}
+
+	.puzzle2 .front {
+		background-image: url("assets/frame_2.png");
+	}
+
+	.puzzle2 .back {
+		background-image: url("assets/frame_2_back.png");
+	}
+
+	/*Puzzle piece 3*/
+
+	.puzzle3 {
+		position: absolute;
+		width: 19.834%;
+		height: 28.675%;
+		margin-top: 8.735%;
+		margin-left: calc(7.333% + 19.834% * 2 + 2% * 2);
+	}
+
+	.puzzle3 .front {
+		background-image: url("assets/frame_3.png");
+	}
+
+	.puzzle3 .back {
+		background-image: url("assets/frame_3_back.png");
+	}
+
+	/*Puzzle piece 4*/
+
+	.puzzle4 {
+		position: absolute;
+		width: 19.834%;
+		height: 60.241%;
+		margin-top: 8.735%;
+		margin-left: calc(7.333% + 19.834% * 3 + 2% * 3);
+	}
+
+	.puzzle4 .front {
+		background-image: url("assets/frame_4.png");
+	}
+
+	.puzzle4 .back{
+		background-image: url("assets/frame_4_back.png");
+	}
+
+	/*Puzzle piece 5*/
+
+	.puzzle5 {
+		position: absolute;
+		width: 19.834%;
+		height: 28.675%;
+		margin-top: calc(8.735% + 19.834% + 2%);
+		margin-left: 7.333%;
+	}
+
+	.puzzle5 .front {
+		background-image: url("assets/frame_5.png");
+	}
+
+	.puzzle5 .back {
+		background-image: url("assets/frame_5_back.png");
+	}
+
+	/*Puzzle piece 6*/
+
+	.puzzle6 {
+		position: absolute;
+		width: 41.667%;
+		height: 28.675%;
+		margin-top: calc(8.735% + 19.834% + 2%);
+		margin-left: calc(7.333% + 19.834% + 2%);
+	}
+
+	.puzzle6 .front {
+
+		background-image: url("assets/frame_6.png");
+	}
+
+	.puzzle6 .back {
+		background-image: url("assets/frame_6_back.png");
+	}
+
+	/*Puzzle piece 7*/
+	.puzzle7 {
+		position: absolute;
+		width: 52.584%;
+		height: 19.8796%;
+		margin-top: calc(8.735% + 19.834% * 2 + 2% * 2);
+		margin-left: 7.333%;
+	}
+
+	.puzzle7 .front {
+		background-image: url("assets/frame_7.png");
+	}
+
+	.puzzle7 .back {
+		background-image: url("assets/frame_7_back.png");
+	}
+
+	/*Puzzle piece 8*/
+	.puzzle8 {
+		position: absolute;
+		width: 30.167%;
+		height: 19.8796%;
+		margin-top: calc(8.735% + 19.834% * 2 + 2% * 2);
+		margin-left: calc(7.333% + 52.583% + 2.59%);
+	}
+
+	.puzzle8 .front {
+		background-image: url("assets/frame_8.png");
+	}
+
+	.puzzle8 .back {
+		background-image: url("assets/frame_8_back.png");
+	}
+
+/*Puzzle ending*/
+
+/*Animation timings*/
+
+.animate1 .flipper {
+	-webkit-animation-delay: 2s;
+	animation-delay: 2s;
+}
+
+.animate2 .flipper {
+	-webkit-animation-delay: 2.6s;
+	animation-delay: 2.6s;
+}
+
+.animate3 .flipper {
+	-webkit-animation-delay: 2.6s;
+	animation-delay: 2.6s;
+}
+
+.animate4 .flipper {
+	-webkit-animation-delay: 3.2s;
+	animation-delay: 3.2s;
+}
+
+.animate5 .flipper {
+	-webkit-animation-delay: 3.8s;
+	animation-delay: 3.8s;
+}
+
+.animate6 .flipper {
+	-webkit-animation-delay: 4.4s;
+	animation-delay: 4.4s;
+}
+
+.animate7 .flipper {
+	-webkit-animation-delay: 4.4s;
+	animation-delay: 4.4s;
+}
+
+.animate8 .flipper {
+	-webkit-animation-delay: 5s;
+	animation-delay: 5s;
+}
+
+.animate1 {
+	animation: slide_left 1s forwards;
+	-webkit-animation-delay: 5.6s;
+	animation-delay: 5.6s;
+}
+
+.animate2 {
+	animation: slide_top 1s forwards;
+	-webkit-animation-delay: 5.75s;
+	animation-delay: 5.75s;
+}
+
+.animate3 {
+	animation: slide_top 1s forwards;
+	-webkit-animation-delay: 5.9s;
+	animation-delay: 5.9s;
+}
+
+.animate4 {
+	animation: slide_top 1s forwards;
+	-webkit-animation-delay: 6.05s;
+	animation-delay: 6.05s;
+}
+
+.animate5 {
+	animation: slide_left 1.4s forwards;
+	-webkit-animation-delay: 6.3s;
+	animation-delay: 6.3s;
+}
+
+.animate6 {
+	animation: slide_left 1s forwards;
+	-webkit-animation-delay: 6.15s;
+	animation-delay: 6.15s;
+}
+
+.animate7 {
+	animation: slide_right 1.2s forwards;
+	-webkit-animation-delay: 6.45s;
+	animation-delay: 6.45s;
+}
+
+.animate8 {
+	animation: slide_top 1s forwards;
+	-webkit-animation-delay: 6.05s;
+	animation-delay: 6.05s;
+}
